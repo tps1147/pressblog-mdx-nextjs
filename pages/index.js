@@ -21,18 +21,32 @@ const Home = ({ posts }) => {
   return (
     <>
       <Meta title='PressBlog - Your one stop blog for anything React Native' />
-      <MeetMe />
-      <Link href='/about'>More about me</Link>
+      <div className={styles.mainPageHeader}>
+        <div className={styles.mainHeaderRow}>
+          <div className={styles.mainHeaderCol}>
+          <h1 className={styles.title}>The knowledge shak</h1>
+            <p className={styles.desc}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+              quod, voluptate, quia, voluptates quibusdam voluptatibus
+              necessitatibus quae quidem voluptatum quos natus. Quisquam
+            </p>
+          </div>
+          <div className={styles.mainHeaderCol}>
+            <MeetMe />
+          </div>
+        </div>
+      </div>
 
       <div className={styles.articleList}>
-        <p className={styles.desc}>Newly Published</p>
+        {/* <p className={styles.desc}>Newly Published</p> */}
         {filteredPosts.map((post, index) => (
           <PostItem key={index} post={post} />
         ))}
-        <button onClick={loadMorePosts} className={styles.button}>
+        
+      </div>
+      <button onClick={loadMorePosts} className={styles.button}>
           Load more
         </button>
-      </div>
     </>
   );
 };

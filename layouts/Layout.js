@@ -1,9 +1,10 @@
 import Header from '../components/Header';
-
+import Nav from '../components/Nav';
 const Layout = ({ children }) => {
   return (
     <div>
-      <Header />
+      <Nav />
+      {/* <main className='max-width-container' style={{ padding: '50px 30px' }}> */}
       <main className='max-width-container' style={{ padding: '50px 30px' }}>
         {children}
       </main>

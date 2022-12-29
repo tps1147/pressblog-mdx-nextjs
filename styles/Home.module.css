@@ -2,6 +2,13 @@
   padding: 15px 30px;
   padding-top: 45px;
 }
+.divider {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #385198;
+  height: 3px;
+  width: 100%;
+}
 
 .articleList {
   margin-top: 55px;
@@ -10,7 +17,12 @@
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0rem;
+  color: #7228cd;
 }
 
 .desc {
@@ -21,8 +33,13 @@
 
 .postItem {
   margin-bottom: 40px;
-  width: 400px;
-
+  width: 450px;
+  margin-right: 30px;
+  margin-left: 30px;
+  padding: 1.5rem;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .img {
@@ -46,19 +63,68 @@
 
 .mainHeaderRow {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-direction: row;
   align-items: center;
   margin-bottom: 30px;
+  margin-left: 0rem;
+  margin-right: 0rem;
   width: 100%;  
 }
-
+.filterButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  background-color: white;
+  color: slategrey;
+  border-bottom: #7228cd 2px solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.thumbnailImage {
+  width: 90%;
+  height: 300px;
+  border-radius: 4px;
+  margin: 1rem;
+}
+.mainFilter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
 .mainHeaderCol {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  width: 40%;
+  align-items: center;
+  width: 50%;
   margin-top: 4rem;
+  margin-left: 5rem;
+}
+.mainHeaderColLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 50%;
+  margin-top: 4rem;
+  margin-right: 5rem;
 }
 
 .mainPageHeader {

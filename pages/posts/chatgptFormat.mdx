@@ -1,0 +1,50 @@
+---
+title: "Creating a Server-Rendered React App with Next.js"
+date: "2022-01-01"
+author: "Jane Smith"
+thumbnail: /test.jpg
+---
+
+# Creating a Server-Rendered React App with Next.js
+
+Next.js is a popular framework for building server-rendered React applications. It makes it easy to create performant and scalable web apps, with automatic code splitting and optimized performance out of the box.
+
+In this tutorial, we'll walk through the steps of setting up a basic Next.js app and adding some simple components to it.
+
+## Prerequisites
+
+Before we get started, make sure you have the following installed on your machine:
+
+- Node.js (version 10 or higher)
+- npm or yarn
+
+## Setting Up the Project
+
+To create a new Next.js app, we'll use the `create-next-app` command. Open up a terminal and run the following:
+
+
+This will create a new directory called `my-app` and set up a basic Next.js project inside it.
+
+## Adding Components
+
+Next.js uses the concept of "pages" to define the different routes in your app. Each page is a React component that gets rendered on the server and sent to the client.
+
+To create a new page, create a new file in the `pages` directory with a `.js` extension. For example, to create a page for the home route, create a file at `pages/index.js`.
+
+Inside the page component, you can add any React components or JSX that you want to render on the page. Here's an example of a simple home page component:
+
+
+```jsx 
+import React from 'react'
+
+export default function Blog({}) {
+  return (
+    <div>
+      <h1>Welcome to my Next.js app!</h1>
+      <p>This is the home page.</p>
+    </div>
+  )
+}
+
+export default Home
+```

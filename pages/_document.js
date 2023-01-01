@@ -4,10 +4,12 @@ const MyDocument = () => {
   return (
     <Html lang='en'>
       <Head>
+     
         <link
-          rel='stylesheet'
-          href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css'
-        />
+            rel="stylesheet"
+            href="https://unpkg.com/dracula-prism/dist/css/dracula-prism.css"
+          ></link>
+          
       </Head>
       <body>
         <Main />

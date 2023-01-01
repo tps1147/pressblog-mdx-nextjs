@@ -22,24 +22,24 @@ export default function Nav() {
         <div className={styles.container}>
             <div className={styles.nav}>
                 <div className={styles.navLeft}>
-                    <h1>The Shak</h1>
+                    <img src="/houseLogo.png" alt="logo" width={70} height={70} />
                 </div>
-                <div >
+                <div>
                 <ul className={styles.navRight}>
                     <li className={styles.navItem}>
                         <Link href="/">Home</Link>
                     </li>
                     <li className={styles.navItem}>
-                        <Link href="/fullMap">About</Link>
+                        <Link href="/about">About</Link>
                     </li>
                     <li className={styles.navItem}>
                         <Link href="/blogs">Blogs</Link>
                     </li>
                     <li className={styles.navItem}>
-                        <Link href="/contact">Serives</Link>
+                        <Link href="/services">Services</Link>
                     </li>
                     <li className={styles.navItem}>
-                        <Link href="/reviews">Contact</Link>
+                        <Link href="/contact">Contact</Link>
                     </li>
                 </ul>
                 <div className={styles.navCollapsed}>

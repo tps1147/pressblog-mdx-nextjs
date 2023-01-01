@@ -15,14 +15,34 @@
   flex-direction: row;
   display: flex;
   flex-wrap: wrap;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
   justify-content: center;
   width: 100%;
 }
 .title {
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: 3.5rem;
+  font-weight: 400;
   margin-bottom: 0rem;
-  color: #7228cd;
+  color: #4e28cd;
+  text-shadow: -1px -1px 3px white;
+}
+
+.serviceHeader {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-top: 2rem;
+  color: #4e28cd;
+  text-shadow: -1px -1px 3px lightgrey;
+}
+.writingHeader {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-top: 3rem;
+  margin-left: 4rem;
+  color: #d5c9ff;
+  text-shadow: -1px -1px 2px lightgrey;
 }
 
 .desc {
@@ -39,7 +59,20 @@
   padding: 1.5rem;
   border-radius: 20px;
   background-color: white;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  margin-top: 0rem;
+  margin-bottom: 2rem;
 }
 
 .img {
@@ -69,6 +102,8 @@
   margin-bottom: 30px;
   margin-left: 0rem;
   margin-right: 0rem;
+  padding: 5rem;
+  padding-right: 0rem;
   width: 100%;  
 }
 .filterButton {
@@ -91,13 +126,13 @@
 }
 .thumbnailImage {
   width: 90%;
-  height: 300px;
+  height: 200px;
   border-radius: 4px;
   margin: 1rem;
 }
 .mainFilter {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   width: 100%;
@@ -107,8 +142,9 @@
   border-radius: 4px;
   cursor: pointer;
   padding: 10px;
-  margin-left: 1rem;
+  margin-left: 4rem;
   margin-right: 1rem;
+  margin-top: 2rem;
 }
 .mainHeaderCol {
   display: flex;
@@ -122,11 +158,49 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 50%;
+  width: 40%;
   margin-top: 4rem;
   margin-right: 5rem;
 }
 
 .mainPageHeader {
-
+  background-image: url("/mainBack.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+}
+.ServiceArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  min-height: 60vh;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.ServiceAreaRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  min-height: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.ServiceAreaCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: auto;
+  min-height: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 5rem;
 }

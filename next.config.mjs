@@ -1,6 +1,10 @@
 import rehypeHighlight from 'rehype-highlight';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
+import remarkSlug from 'remark-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeCodeTitles from 'rehype-code-title';
+import remarkPrism from 'remark-prism';
 
 export default {
   webpack: (config, options) => {
@@ -12,8 +16,8 @@ export default {
           loader: '@mdx-js/loader',
           options: {
             providerImportSource: '@mdx-js/react',
-            remarkPlugins: [remarkFrontmatter, remarkGfm],
-            rehypePlugins: [rehypeHighlight],
+            remarkPlugins: [remarkFrontmatter, remarkGfm, remarkSlug, remarkPrism],
+            rehypePlugins: [rehypeHighlight, rehypeAutolinkHeadings],
           },
         },
       ],

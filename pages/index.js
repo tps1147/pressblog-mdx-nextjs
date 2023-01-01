@@ -3,15 +3,17 @@ import Link from 'next/link';
 import PostItem from '../components/PostItem';
 import styles from '../styles/Home.module.css';
 import Meta from '../components/Meta';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { getPosts } from '../scripts/utils.js';
 import { Raleway } from '@next/font/google'
 
-const raleway = Raleway({})
+
+const raleway = Raleway({ weights: [400, 500, 600, 700], subsets: ['latin'] })
 
 const Home = ({ posts }) => {
   const [filteredPosts, setFilteredPosts] = useState(posts);
   const [currentPageIndex, setCurrentPageIndex] = useState(1);
+
 
   const loadMorePosts = async () => {
     const res = await fetch(`/api/posts?page=${currentPageIndex + 1}`); // absolute url is supported here
@@ -32,7 +34,7 @@ const Home = ({ posts }) => {
   };
 
   return (
-    <>
+    <div style={{ overflow: 'hidden'}}>
       <Meta title='PressBlog - Your one stop blog for anything React Native' />
       <div className={styles.mainPageHeader}>
         <div className={styles.mainHeaderRow}>
@@ -51,7 +53,7 @@ const Home = ({ posts }) => {
           </div>
         </div>
       </div>
-      <div className={styles.divider}/>
+      <h2 className={styles.writingHeader}>Wrxting & Content</h2>
       <div className={styles.mainFilter}>
         {/* <div className={styles.filterItem}></div> */}
           <button onClick={filterPosts.bind(this, 'All')} className={styles.filterButton}>All</button>
@@ -71,7 +73,32 @@ const Home = ({ posts }) => {
       <button onClick={loadMorePosts} className={styles.button}>
           Load more
         </button>
-    </>
+        <div className={styles.ServiceArea}>
+          <div className={styles.ServiceAreaRow}>
+            <div className={styles.ServiceAreaCol}>
+              <h2 className={styles.serviceHeader}>Content that moves</h2>
+              <p>
+                We are a team of content creators, and we are here to help you
+                create content that moves. We are here to help you create content
+                that means something real to your audience, and provide the truth to the world.
+              </p>
+          </div>
+          <div className={styles.ServiceAreaCol}>
+            <h2>Design here</h2>
+          </div>
+          </div>
+        </div>
+        <div className={styles.footer}>
+          <div className={styles.footerRow}>
+            <div className={styles.footerCol}>
+              <h2>;The Shak</h2>
+            </div>
+            <div className={styles.footerCol}>
+              <h2>site map and etc. here</h2>
+            </div>
+          </div>
+        </div>
+    </div>
   );
 };
 

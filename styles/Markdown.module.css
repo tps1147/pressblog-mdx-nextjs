@@ -7,9 +7,58 @@
 .p {
   text-align: left;
   font-size: 1rem;
+  width: 600px;
+  margin: auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+.ul {
+  text-align: left;
+  font-size: 1rem;
   width: auto;
   margin: auto auto;
   max-width: 600px;
+}
+.li {
+  text-align: left;
+  font-size: 1rem;
+  margin: 1rem;
+}
+.blockquote {
+  text-align: left;
+  font-size: 1rem;
+  width: auto;
+  margin: auto auto;
+  max-width: 600px;
+  border-left: 4px solid rgb(164, 233, 228);
+  padding-left: 1rem;
+}
+.inlineCode {
+  background: rgb(164, 233, 228);
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  font-size: 0.9rem;
+  margin: 0rem 0rem; 
+  display: inline-block;
+  width: auto;
+  height: auto;
+  overflow-x: auto;
+}
+.pre {
+  background: rgb(164, 233, 228);
+  color: rgb(0, 0, 0);
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  font-size: 0.9rem;
+  margin: 0rem 0rem; 
+  display: block;
+  width: 500px;
+  height: auto;
+  overflow-x: auto;
 }
 
 .code {
@@ -17,6 +66,7 @@
   padding: 0.5em 1em;
   font-size: 0.9rem;
   margin: 0rem 0rem; 
+  background-color: rgb(38, 40, 49);
   display: block;
   width: 500px;
   height: auto;

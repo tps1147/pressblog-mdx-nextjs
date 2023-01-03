@@ -43,7 +43,7 @@ export default function Nav() {
                         <Link href="/contact">Contact</Link>
                     </li>
                     <li className={styles.navItem}>
-                        <Link href="/contact">Site ppl</Link>
+                        <Link href="https://siteppl.com">Site ppl</Link>
                     </li>
                 </ul>
                 </div>

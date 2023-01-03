@@ -2,7 +2,7 @@ import Header from '../components/Header';
 import Nav from '../components/Nav';
 import remarkGfm from 'remark-gfm'
 import styles from '../styles/Home.module.css';
-import Footer from '../components/footer';
+import Footer from '../components/Footer.js';
 
 
 

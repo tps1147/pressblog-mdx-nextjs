@@ -16,7 +16,7 @@ export const getPosts = (pageIndex) => {
         'utf-8'
       );
       const { data, content } = matter(fileContent);
-
+      const date = new Date(data.publishedOn);
       const slug = file.name.replace(/.mdx$/, '');
       return { data, content, slug };
     })

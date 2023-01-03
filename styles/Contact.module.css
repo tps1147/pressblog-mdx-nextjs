@@ -1,8 +1,29 @@
-.layoutFormat {
-    padding-top: 5rem;
-    height: 40vh;
+.form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-}
+    width: 100%;
+  }
+  
+  .label,
+  .input,
+  .textarea {
+    width: 50%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .button {
+    width: 25%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }

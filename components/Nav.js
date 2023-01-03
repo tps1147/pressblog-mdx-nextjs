@@ -5,6 +5,9 @@ import styles from '../styles/Nav.module.css'
 import Link from 'next/link'
 import { Button, Drawer } from 'antd';
 import { AiOutlineMenu } from 'react-icons/ai'
+import { Raleway } from '@next/font/google'
+
+const raleway = Raleway({ weights: [400, 500, 600, 700], subsets: ['latin'] })
 
 export default function Nav() {
 
@@ -21,10 +24,7 @@ export default function Nav() {
     return (
         <div className={styles.container}>
             <div className={styles.nav}>
-                <div className={styles.navLeft}>
-                    <img src="/houseLogo.png" alt="logo" width={70} height={70} />
-                </div>
-                <div>
+                <div className={raleway.className}>
                 <ul className={styles.navRight}>
                     <li className={styles.navItem}>
                         <Link href="/">Home</Link>
@@ -35,20 +35,26 @@ export default function Nav() {
                     <li className={styles.navItem}>
                         <Link href="/blogs">Blogs</Link>
                     </li>
+                    <img src="/shaklogo.png" alt="logo" width={80} height={70} />
                     <li className={styles.navItem}>
                         <Link href="/services">Services</Link>
                     </li>
                     <li className={styles.navItem}>
                         <Link href="/contact">Contact</Link>
                     </li>
+                    <li className={styles.navItem}>
+                        <Link href="/contact">Site ppl</Link>
+                    </li>
                 </ul>
+                </div>
                 <div className={styles.navCollapsed}>
                 <AiOutlineMenu onClick={showDrawer} className={styles.menuIcon} />
+                <img src="/shaklogo.png" alt="logo" width={80} height={70} />
                     <Drawer
                         placement="right"   
                         closable={false}
                         onClose={onClose}
-                        visible={visible}
+                        open={visible}
                         key="right"
                         >
                         <ul className={styles.navDrawer}>
@@ -70,7 +76,7 @@ export default function Nav() {
                         </ul>
                     </Drawer>
                 </div>
-            </div>
+ 
             </div>
         </div>
     )

@@ -2,6 +2,7 @@ import Header from '../components/Header';
 import Nav from '../components/Nav';
 import remarkGfm from 'remark-gfm'
 import styles from '../styles/Home.module.css';
+import Footer from '../components/footer';
 
 
 
@@ -14,6 +15,7 @@ const Layout = ({ children }) => {
       <main className={styles.layoutContainer} style={{ padding: '0px' }}>
         {children}
       </main>
+      <Footer />
     </div>
   );
 };

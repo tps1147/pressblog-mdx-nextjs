@@ -2,6 +2,8 @@
   border-bottom: 2px solid rgb(164, 233, 228);
   padding-bottom: 13px;
   margin-top: 8rem;
+  width: 600px;
+  text-align: left;
 }
 
 .p {
@@ -18,9 +20,8 @@
 .ul {
   text-align: left;
   font-size: 1rem;
-  width: auto;
+  width: 600px;
   margin: auto auto;
-  max-width: 600px;
 }
 .li {
   text-align: left;
@@ -65,11 +66,12 @@
   border-radius: 4px;
   padding: 0.5em 1em;
   font-size: 0.9rem;
-  margin: 0rem 0rem; 
+  margin: .7rem; 
   background-color: rgb(38, 40, 49);
   display: block;
-  width: 500px;
+  width: 600px;
   height: auto;
+  color: white;
   overflow-x: auto;
 }
 
@@ -100,3 +102,76 @@
 .tooltipBtn {
   cursor: pointer;
 }
+
+
+@media ( max-width: 650px ) {
+  .postTitle {
+    border-bottom: 2px solid rgb(164, 233, 228);
+    padding-bottom: 13px;
+    margin-top: 8rem;
+    width: 95%;
+    text-align: left;
+  }
+  
+  .p {
+    text-align: left;
+    font-size: 1rem;
+    width: 95%;
+    margin: auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  
+  }
+  
+  .ul {
+    text-align: left;
+    font-size: 1rem;
+    width: 95%;
+    margin: auto auto;
+  }
+  .li {
+    text-align: left;
+    font-size: 1rem;
+    margin: 1rem;
+  }
+  .blockquote {
+    text-align: left;
+    font-size: 1rem;
+    width: 95%;
+    margin: auto auto;
+    border-left: 4px solid rgb(164, 233, 228);
+    padding-left: 1rem;
+  }
+  
+  .code {
+    border-radius: 4px;
+    padding: 0.5em 1em;
+    font-size: 0.9rem;
+    margin: .7rem; 
+    background-color: rgb(38, 40, 49);
+    display: block;
+    width: 95%;
+    height: auto;
+    color: white;
+    overflow-x: auto;
+  }
+  
+  
+  .link {
+    color: rgb(0, 110, 255);
+  }
+  .mainImage {
+    width: 300px;
+    height: 300px;
+    border-radius: 4px;
+    margin: 1rem;
+    margin-top: 0rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+
+}
+

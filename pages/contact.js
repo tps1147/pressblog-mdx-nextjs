@@ -25,9 +25,11 @@ function Contact() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
+      className={styles.container}
     >
-      <h1>Contact Us</h1>
+      
       <form className={styles.form} onSubmit={handleSubmit}>
+      <h2>Contact Us</h2>
         <label className={styles.label} htmlFor="name">Name:</label>
         <input
           type="text"
@@ -54,7 +56,7 @@ function Contact() {
           onChange={handleChange}
           required
         />
-        <button type="submit">Send</button>
+        <button className={styles.button} type="submit">Send</button>
       </form>
     </motion.div>
   )

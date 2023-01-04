@@ -8,6 +8,12 @@ body {
 h3 {
   margin: 0rem;
 }
+h1 {
+  margin: 0rem;
+}
+p {
+  margin: 0rem;
+}
 
 * {
   box-sizing: border-box;

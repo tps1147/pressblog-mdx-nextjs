@@ -8,15 +8,16 @@ import { getPosts } from '../scripts/utils.js';
 import { Raleway } from '@next/font/google'
 import { motion } from 'framer-motion'
 import Image from 'next/image.js';
-
-
+import { BsMedium } from 'react-icons/bs';
+import { AiOutlineTwitter, AiOutlineInstagram } from 'react-icons/ai';
+import { FaDev } from 'react-icons/fa';
 
 const raleway = Raleway({ weights: [400, 500, 600, 700], subsets: ['latin'] })
 
 const Home = ({ posts }) => {
   const [filteredPosts, setFilteredPosts] = useState(posts);
   const [currentPageIndex, setCurrentPageIndex] = useState(1);
-
+  const [activeFilter, setActiveFilter] = useState('All');
 
   const loadMorePosts = async () => {
     const res = await fetch(`/api/posts?page=${currentPageIndex + 1}`); // absolute url is supported here
@@ -26,6 +27,7 @@ const Home = ({ posts }) => {
     setCurrentPageIndex((_pageIndex) => _pageIndex + 1);
   };
   const filterPosts = (category) => {
+    setActiveFilter(category);
     if (category === 'All') {
       setFilteredPosts(posts);
     } else {
@@ -40,6 +42,25 @@ const Home = ({ posts }) => {
   }
 
   const lineToAnimate = 'The Knowledge Shak'
+  const lineToAnimate2 = '- Unbiased and thoroughly researched content - for the modern monkey.'
+
+  const sentence = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        staggerChildren: 0.08
+      }
+    }
+  }
+  const letter = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    }
+  }
 
   return (
     <div style={{ overflow: 'hidden'}}>
@@ -49,14 +70,43 @@ const Home = ({ posts }) => {
           <div className={styles.mainHeaderColLeft}>
           {/* <Image src='/shaklogo.png' alt='logo' width={100} height={100} loader={myLoader} /> */}
             <div className={raleway.className}>
-              <h1 className={styles.title}>  The Knowledge Shak </h1>
+              <motion.h1
+                className={styles.title}
+                variants={sentence}
+                initial="hidden"
+                animate="visible"
+              >
+                {lineToAnimate.split('').map((char, index) => {
+                  return (
+                    <motion.span key={char + '-' + index} variants={letter}>
+                      {char}
+                    </motion.span>
+                  )
+                })}
+              </motion.h1>
+            </div>
+            <div className={raleway.className}>
+              <motion.p 
+                className={styles.tagline}
+                variants={sentence}
+                initial="hidden"
+                animate="visible"
+              >
+                {lineToAnimate2.split('').map((char, index) => {
+                  return (
+                    <motion.span key={char + '-' + index} variants={letter}>
+                      {char}
+                    </motion.span>
+                  )
+                })}
+              </motion.p>
             </div>
             <div className={raleway.className}>
             <p className={styles.desc}>
             Welcome to The Knowledge Shak, where we provide true and unbiased content for the modern monkey. 
             In an era of endless noise, it can be overwhelming to sort through all the information out there 
             and find what is actually true and relevant. That's where we come in. Our team of modern monkeys works 
-            tirelessly to bring you the facts, without any spin or agenda. We believe that knowledge is power, and 
+            tirelessly to bring you the facts, without any spin or agenda. We believe that <strong>knowledge is power</strong>, and 
             it's our mission to empower you with the information you need to make informed decisions.
             </p>
             </div>
@@ -65,16 +115,17 @@ const Home = ({ posts }) => {
                 <p className={styles.link}>All posts</p>
               </Link>
               <Link href='https://medium.com/@smith7t'>
-                <p className={styles.link}>Medium</p>
+                
+                <p className={styles.link}> <BsMedium className={styles.icon}  /> Medium</p>
               </Link>
               <Link href='/about'>
-                <p className={styles.link}>Twitter</p>
+                <p className={styles.link}><AiOutlineTwitter className={styles.icon}/> Twitter</p>
               </Link>
               <Link href='/about'>
-                <p className={styles.link}>Instagram</p>
+                <p className={styles.link}><AiOutlineInstagram className={styles.icon}/> Instagram</p>
               </Link>
               <Link href='/about'>
-                <p className={styles.link}>Dev</p>
+                <p className={styles.link}><FaDev className={styles.icon}/> Dev</p>
               </Link>
             </div>
           </div>
@@ -83,12 +134,12 @@ const Home = ({ posts }) => {
       </div>
       <div className={styles.mainFilter}>
         {/* <div className={styles.filterItem}></div> */}
-          <button onClick={filterPosts.bind(this, 'All')} className={styles.filterButton}>All</button>
-          <button onClick={filterPosts.bind(this, 'technology')} className={styles.filterButton}>Technology</button>
-          <button className={styles.filterButton}>Business</button>
-          <button className={styles.filterButton}>Politics</button>
-          <button className={styles.filterButton}>Sports</button>
-          <button className={styles.filterButton}>Entertainment</button>
+          <button onClick={filterPosts.bind(this, 'All')} className={activeFilter === 'All' ? styles.activeFilter : styles.filterButton}>All</button>
+          <button onClick={filterPosts.bind(this, 'Technology')} className={activeFilter === 'Technology' ? styles.activeFilter : styles.filterButton}>Technology</button>
+          <button className={activeFilter === 'Business' ? styles.activeFilter : styles.filterButton}>Business</button>
+          <button className={activeFilter === 'Politics' ? styles.activeFilter : styles.filterButton}>Politics</button>
+          <button className={activeFilter === 'Sports' ? styles.activeFilter : styles.filterButton}>Sports</button>
+          <button className={activeFilter === 'Entertainment' ? styles.activeFilter : styles.filterButton}>Entertainment</button>
       </div>
       <div className={styles.articleList}>
         {/* <p className={styles.desc}>Newly Published</p> */}

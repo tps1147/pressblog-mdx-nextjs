@@ -13,6 +13,7 @@ const MDXComponents = {
   h1: (props) => <h1 {...props} className={styles.postTitle} />,
   img: (props) => <img className={styles.mainImage} {...props} />,
   code: (props) => <code {...props} className={styles.code} />,
+  div: (props) => <div {...props} className={styles.div} />,
 };
 
 

@@ -1,7 +1,7 @@
 import MeetMe from '../components/MeetMe.js';
 import Link from 'next/link';
 import PostItem from '../components/PostItem';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Blog.module.css';
 import Meta from '../components/Meta';
 import { useState, useEffect } from 'react';
 import { getPosts } from '../scripts/utils.js';
@@ -36,8 +36,11 @@ const Home = ({ posts }) => {
   };
 
   return (
-    <div style={{ overflow: 'hidden'}}>
+    <div className={styles.blogContainer}>
       <Meta title='Knowledge Shak - All Posts' />
+      <div className={styles.titleContainer}>
+      <h3 className={styles.title}>Knowledge Shak posts</h3>
+      </div>
       <div className={styles.mainFilter}>
         {/* <div className={styles.filterItem}></div> */}
           <button onClick={filterPosts.bind(this, 'All')} className={styles.filterButton}>All</button>

@@ -16,7 +16,7 @@ const PostItem = ({ post }) => {
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
     className={styles.postItem}>
-      <img className={styles.thumbnailImage} src={post.data.thumbnail} alt='blog image' />
+      {/* <img className={styles.thumbnailImage} src={post.data.thumbnail} alt='blog image' /> */}
       <h3 className={styles.postTitle}>
         <Link href={`/posts/${post.slug}`}>{post.data.title}</Link>
       </h3>
@@ -25,7 +25,7 @@ const PostItem = ({ post }) => {
         <p className={styles.postItemCategory}>{post.data.category}</p>
       </div>
       <p>{post.data.excerpt}</p>
-      <Link href={`/posts/${post.slug}`}>Read more</Link>
+      <Link className={styles.linkButton} href={`/posts/${post.slug}`}>Read more</Link>
     </motion.div>
   );
 };

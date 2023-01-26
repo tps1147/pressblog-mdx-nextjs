@@ -12,8 +12,7 @@ import { motion } from 'framer-motion'
 function MyApp({ Component, pageProps }) {
   const [currentRoute, setCurrentRoute] = useState('')
   const [loading, setLoading] = useState(true)
-  let route = useRouter()
-
+ const router = useRouter()
 
   return (
     <AnimatePresence 
@@ -21,7 +20,7 @@ function MyApp({ Component, pageProps }) {
     mode="wait"
     onExitComplete={() => window.scrollTo(0, 0)}>
     <motion.div
-    key={route.route}
+    key={router.route}
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}

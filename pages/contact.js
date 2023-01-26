@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import styles from '../styles/Contact.module.css'
 import { useState } from 'react'
+const axios = require('axios')
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -17,7 +18,64 @@ function Contact() {
   const handleSubmit = e => {
     e.preventDefault()
     // send email to create@siteppl.com using form data
+    axios.post('/api/contact', formData)
   }
+  const [status, setStatus] = useState({
+    submitted: false,
+    submitting: false,
+    info: { error: false, msg: null },
+  });
+  const [inputs, setInputs] = useState({
+    email: '',
+    message: '',
+  });
+  const handleServerResponse = (ok, msg) => {
+    if (ok) {
+      setStatus({
+        submitted: true,
+        submitting: false,
+        info: { error: false, msg: msg },
+      });
+      setInputs({
+        email: '',
+        message: '',
+      });
+    } else {
+      setStatus({
+        info: { error: true, msg: msg },
+      });
+    }
+  };
+  const handleOnChange = (e) => {
+    e.persist();
+    setInputs((prev) => ({
+      ...prev,
+      [e.target.id]: e.target.value,
+    }));
+    setStatus({
+      submitted: false,
+      submitting: false,
+      info: { error: false, msg: null },
+    });
+  };
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+    setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
+    axios({
+      method: 'POST',
+      url: 'https://formspree.io/f/xwkjkowq',
+      data: inputs,
+    })
+      .then((response) => {
+        handleServerResponse(
+          true,
+          'Thank you, your message has been submitted.',
+        );
+      })
+      .catch((error) => {
+        handleServerResponse(false, error.response.data.error);
+      });
+  };
 
   return (
     <motion.div
@@ -28,36 +86,44 @@ function Contact() {
       className={styles.container}
     >
       
-      <form className={styles.form} onSubmit={handleSubmit}>
-      <h2>Contact Us</h2>
-        <label className={styles.label} htmlFor="name">Name:</label>
+      <form className={styles.form} onSubmit={handleOnSubmit}>
+        <div className={styles.headerContainer}>
+          <h1 className={styles.contactHeader}>Contact</h1>
+          <p className={styles.contactSubHeader}>
+            create@siteppl.com
+          </p>
+        </div>
+        <label className={styles.label} htmlFor="email">Email</label>
         <input
-          type="text"
-          name="name"
-          value={name}
-          className={styles.input}
-          onChange={handleChange}
-          required
-        />
-        <label className={styles.label} htmlFor="email">Email:</label>
-        <input
+          id="email"
           type="email"
-          name="email"
-          value={email}
+          name="_replyto"
+          onChange={handleOnChange}
+          required
+          value={inputs.email}
           className={styles.input}
-          onChange={handleChange}
-          required
         />
-        <label className={styles.label} htmlFor="message">Message:</label>
+        <label className={styles.label} htmlFor="message">Message</label>
         <textarea
+          id="message"
           name="message"
-          value={message}
-          className={styles.textarea}
-          onChange={handleChange}
+          onChange={handleOnChange}
           required
+          value={inputs.message}
+          className={styles.textarea}
         />
-        <button className={styles.button} type="submit">Send</button>
+        <button className={styles.button} type="submit" disabled={status.submitting}>
+          {!status.submitting
+            ? !status.submitted
+              ? 'Submit'
+              : 'Submitted'
+            : 'Submitting...'}
+        </button>
       </form>
+      {status.info.error && (
+        <div className="error">Error: {status.info.msg}</div>
+      )}
+      {!status.info.error && status.info.msg && <p>{status.info.msg}</p>}
     </motion.div>
   )
 }

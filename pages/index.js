@@ -10,7 +10,8 @@ import { motion } from 'framer-motion'
 import Image from 'next/image.js';
 import { BsMedium } from 'react-icons/bs';
 import { AiOutlineTwitter, AiOutlineInstagram } from 'react-icons/ai';
-import { FaDev } from 'react-icons/fa';
+import { FaDev, FaHandHoldingUsd } from 'react-icons/fa';
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 const raleway = Raleway({ weights: [400, 500, 600, 700], subsets: ['latin'] })
 
@@ -101,15 +102,6 @@ const Home = ({ posts }) => {
                 })}
               </motion.p>
             </div>
-            <div className={raleway.className}>
-            <p className={styles.desc}>
-            Welcome to The Knowledge Shak, where we provide true and unbiased content for the modern monkey. 
-            In an era of endless noise, it can be overwhelming to sort through all the information out there 
-            and find what is actually true and relevant. That's where we come in. Our team of modern monkeys works 
-            tirelessly to bring you the facts, without any spin or agenda. We believe that <strong>knowledge is power</strong>, and 
-            it's our mission to empower you with the information you need to make informed decisions.
-            </p>
-            </div>
             <div className={styles.linkRow}>
             <Link href='/blogs'>
                 <p className={styles.link}>All posts</p>
@@ -131,6 +123,29 @@ const Home = ({ posts }) => {
           </div>
           
         </div>
+        <div className={raleway.className}>
+        {/*  */}
+        <Player
+          autoplay
+          loop
+          src="https://assets4.lottiefiles.com/private_files/lf30_ymkcydpu.json"
+          style={{ height: '100px', width: '300px' }}
+        >
+          <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+        </Player>
+          <div className={styles.desc}>
+            <div className={styles.descHeader}>Creating wealth through knowledge <FaHandHoldingUsd className={styles.iconMain}/> </div>
+            
+            <div className={styles.divider}/>
+              <p>
+                Welcome to The Knowledge Shak, where we provide true and unbiased content for the modern monkey. 
+                In an era of endless noise, it can be overwhelming to sort through all the information out there 
+                and find what is actually true and relevant. That's where we come in. Our team of modern monkeys works 
+                tirelessly to bring you the facts, without any spin or agenda. We believe that <strong>knowledge is power</strong>, and 
+                it's our mission to empower you with the information you need to make informed decisions.
+              </p>
+            </div>
+          </div>
       </div>
       <div className={styles.mainFilter}>
         {/* <div className={styles.filterItem}></div> */}

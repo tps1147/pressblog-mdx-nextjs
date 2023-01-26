@@ -90,7 +90,7 @@ const Home = ({ posts }) => {
       </Form.Item>
     </Form>
       </Modal>
-      <Meta title='PressBlog - Your one stop blog for anything React Native' />
+      <Meta title='Knowledge Shak - services' />
       <div className={styles.mainPageHeader}>
             <div className={raleway.className}>
               <h1 className={styles.title}>Modern copywriting and content creation</h1>
@@ -104,14 +104,14 @@ const Home = ({ posts }) => {
                     Contact us today to learn more about our content creation services and how we can help you reach your audience. View more details below, our contact us and get a custom quote.
                 </p>
             </div>
-            <div className={styles.buttonContainer}>
+            {/* <div className={styles.buttonContainer}>
               <button className={styles.button} onClick={() => setVisible(true)}>
                 Contact us
               </button>
               <button className={styles.button}>
                   View reviews
               </button>
-            </div>
+            </div> */}
       </div>
       <div className={styles.ServiceArea}>
             <div className={styles.ServiceAreaColLeft}>

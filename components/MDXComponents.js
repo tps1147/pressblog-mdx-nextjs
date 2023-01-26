@@ -11,6 +11,8 @@ const MDXComponents = {
   blockquote: (props) => <blockquote {...props} className={styles.blockquote} />,
   inlineCode: (props) => <code {...props} className={styles.inlineCode} />,
   h1: (props) => <h1 {...props} className={styles.postTitle} />,
+  h2: (props) => <h2 {...props} className={styles.h2} />,
+  h3: (props) => <h3 {...props} className={styles.h3} />,
   img: (props) => <img className={styles.mainImage} {...props} />,
   code: (props) => <code {...props} className={styles.code} />,
   div: (props) => <div {...props} className={styles.div} />,

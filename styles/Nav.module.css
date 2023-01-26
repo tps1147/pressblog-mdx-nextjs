@@ -16,7 +16,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 
 }
 .navLeft {
@@ -33,14 +33,18 @@
     display: none;
 }
 .navItem {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 1.8rem;
+    margin-right: 1.8rem;
 
     font-size: 1.2rem;
-    font-weight: 300;
+    font-weight: 500;
     color: #385198;
     text-decoration: none;
     list-style-type: none;
+}
+.logoImage {
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 @media ( max-width: 748px ) {

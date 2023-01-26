@@ -45,12 +45,13 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+    height: 250px;
     align-content: center;
+    background: linear-gradient(180deg, #273660 0%, #fff 100% );
     align-self: center;
     width: 100%;
-    height: auto;
-    margin-top: 0rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
   }
   .tagline {

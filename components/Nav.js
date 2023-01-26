@@ -20,6 +20,9 @@ export default function Nav() {
       const onClose = () => {
         setVisible(false);
         };
+        const myLoader = ({ src, width, quality }) => {
+            return `${src}?w=${width}&q=${quality || 75}`
+            }
       
     return (
         <div className={styles.container}>
@@ -35,7 +38,7 @@ export default function Nav() {
                     <li className={styles.navItem}>
                         <Link href="/blogs">Blogs</Link>
                     </li>
-                    <img src="/shaklogo.png" alt="logo" width={80} height={70} />
+                    <Image src="/shaklogo.png" alt="logo" width={80} loader={myLoader} height={70} className={styles.logoImage} />
                     <li className={styles.navItem}>
                         <Link href="/services">Services</Link>
                     </li>

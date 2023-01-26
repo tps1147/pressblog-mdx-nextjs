@@ -1,12 +1,12 @@
 import Head from 'next/head';
 
-const Meta = ({ title }) => {
+const Meta = ({ title, keywords }) => {
   return (
     <Head>
       <title>{title}</title>
       <meta
         name='keywords'
-        content='writing, content creation, programming, education'
+        content={keywords}
       />
     </Head>
   );
